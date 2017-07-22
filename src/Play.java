@@ -6,14 +6,16 @@ public class Play extends BasicGameState {
 
     Player player;
     Level level;
+    
 
     public Play(int State) {
 
     }
 
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        player = new Player();
         level = new Level("level1");
+        player = new Player(level);
+       
 
     }
 

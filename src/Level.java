@@ -60,4 +60,14 @@ public class Level {
 
     }
 
+    public int[][] getTileMap() {
+        return tileMap;
+    }
+    
+    public void getCol(){
+        
+    }
+    
+    
+
 }

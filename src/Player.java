@@ -10,7 +10,7 @@ import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Player {
-
+    Level level;
     private Image playerImage;
     private Image playerIdle;
     private SpriteSheet playerSpriteSheet;
@@ -29,7 +29,8 @@ public class Player {
     Input input = new Input(Game.HEIGHT);
     private AudioPlayer playerJump;
 
-    public Player() throws SlickException {
+    public Player(Level level) throws SlickException {
+       
         y = Game.HEIGHT - HEIGHT - 25;
         playerImage = new Image("playerwalk.png");
         playerSpriteSheet = new SpriteSheet(playerImage, WIDTH, HEIGHT);
@@ -41,7 +42,6 @@ public class Player {
     }
 
     public void render(Graphics g) throws SlickException {
-
         if (input.isKeyDown(Input.KEY_D)) {
             playerWalk.getCurrentFrame().getFlippedCopy(false, false).draw(x, y);
 
@@ -73,6 +73,12 @@ public class Player {
             x -= velX;
 
         }
+        if(falling){
+            y =- GRAVITY;
+        }
+        
+//        int curCol =  level.getColTile(x);
+//        int curRow = level.getRoyTile(y);
 
     }
 
