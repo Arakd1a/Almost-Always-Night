@@ -1,5 +1,6 @@
 
 import java.awt.Rectangle;
+import java.util.Random;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -8,7 +9,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Player extends Thing {
-
+    Random r = new Random();
     Level level;
     Input input;
     int x = 64, y = 64, velX, velY, lastX, lastY;
@@ -33,13 +34,12 @@ public class Player extends Thing {
 
     public void render(Graphics g) throws SlickException {
         Color previous = new Color(g.getColor());
-        g.setColor(Color.green);
         g.fillRect(x, y, width, height);
         g.setColor(Color.red);
-//        g.drawRect(boundsTop.x, boundsTop.y, boundsTop.width, boundsTop.height);
-//        g.drawRect(boundsBottom.x, boundsBottom.y, boundsBottom.width, boundsBottom.height);
-//        g.drawRect(boundsLeft.x, boundsLeft.y, boundsLeft.width, boundsLeft.height);
-//        g.drawRect(boundsRight.x, boundsRight.y, boundsRight.width, boundsRight.height);
+//      g.drawRect(boundsTop.x, boundsTop.y, boundsTop.width, boundsTop.height);
+//      g.drawRect(boundsBottom.x, boundsBottom.y, boundsBottom.width, boundsBottom.height);
+//      g.drawRect(boundsLeft.x, boundsLeft.y, boundsLeft.width, boundsLeft.height);
+//      g.drawRect(boundsRight.x, boundsRight.y, boundsRight.width, boundsRight.height);
         g.setColor(previous);
     }
 
@@ -115,4 +115,6 @@ public class Player extends Thing {
     public Rectangle getBoundsRight() {
         return new Rectangle(x+width, y, 1, height);
     }
+    
+    
 }
