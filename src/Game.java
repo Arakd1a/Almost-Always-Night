@@ -7,7 +7,7 @@ public class Game extends StateBasedGame {
     public static final String NAME = "Almost Always Night";
     public static final int WIDTH = 640;
     public static final int HEIGHT = 480;
-    public static final boolean GAME_FULLSCREEN = false;
+    public static final boolean GAME_FULLSCREEN = true;
     public static final int MENU_STATE = 0;
     public static final int PLAY_STATE = 1;
 
